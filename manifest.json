@@ -27,5 +27,5 @@
         "48": "icon.png",
         "128": "icon.png"
     },
-    "description": "A plain text description"
+    "description": "It will replace the selected text with the text you enter in the popup."
 }
