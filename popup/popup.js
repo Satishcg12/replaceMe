@@ -17,13 +17,15 @@ replaceWith.addEventListener("keyup", () => {
         };
         chrome.tabs.sendMessage(tabs[0].id, message)
         .then((response) =>{
-
+            if (response.error) {
+                statuss.innerHTML = response.error;
+                return;
+            }
             statuss.innerHTML = "Text replaced....";
-            statuss.style.color = "green";
+
         })
         .catch((error) => {
-            statuss.innerHTML = "Cannot replace text";
-            statuss.style.color = "red";
+            statuss.innerHTML = error.message;
             
         });
 
